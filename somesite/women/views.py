@@ -22,14 +22,12 @@ def about(request):
 
 def addpage(request):
     if request.method == 'POST':
-        form = AddPostForm(request.POST)
+        form = AddPostForm(request.POST, request.FILES)
         if form.is_valid():
-            # print(form.cleaned_data)
-            try:
-                Women.objects.create(**form.cleaned_data)
-                return redirect('home')
-            except:
-                form.add_error(None, 'Ошибка добавления поста')
+            # Women.objects.create(**form.cleaned_data)  #форма НЕ связана с моделью
+            form.save()
+            return redirect('home')
+
     else:
         form = AddPostForm()
     return render(request, 'women/addpage.html', {'form': form, 'title': 'Добавление статьи'})
