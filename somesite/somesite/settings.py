@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-j%x#e@9(wr_ctff@a)nr2hti9xd$#gjblt6zecxqy$z!qy6!l4
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = True
+DEBUG = False
 
 
 ALLOWED_HOSTS = ['127.0.0.1']
@@ -141,9 +141,9 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
-        'LOCATION': os.path.join(BASE_DIR, 'somesite_cache'),
-    }
-}
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+#         'LOCATION': os.path.join(BASE_DIR, 'somesite_cache'),
+#     }
+# }
